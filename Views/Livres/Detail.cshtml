@@ -1,0 +1,26 @@
+﻿@model Livre
+
+<h1>Livre : @Model.Title</h1>
+
+<table style="width: 100%; border-collapse: collapse; text-align: left; font-family: Arial, sans-serif;">
+    <thead>
+        <tr style="background-color: #f2f2f2; border-bottom: 2px solid #ddd;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Id</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Titre</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Tome</th>
+            <th style="padding: 10px; border: 1px solid #ddd;"></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; border: 1px solid #ddd;">@Model.Id</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@Model.Title</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@Model.NumeroTome</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                    <a class="nav-link" asp-area="" asp-controller="Livres" asp-action="Edit" asp-route-id="@Model.Id">Modifier</a>
+                </td>
+            </tr>
+       
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@model Livre
+
+<h1>Nouvau Livre</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="Title" class="form-label">Titre :</label>
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-input" })
+            @Html.ValidationMessageFor(m => m.Title, "", new { @class = "form-error" })
+        </div>
+
+        <div class="form-group">
+            <label for="NumeroTome" class="form-label">Tome :</label>
+            @Html.TextBoxFor(m => m.NumeroTome, new { @class = "form-input" })
+            @Html.ValidationMessageFor(m => m.NumeroTome, "", new { @class = "form-error" })
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">Ajouter</button>
+        </div>
+    </div>
+}
